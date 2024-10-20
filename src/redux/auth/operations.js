@@ -35,7 +35,21 @@ export const login = createAsyncThunk(
 
 export const logout = createAsyncThunk("logout", async (_, thunkApi) => {
   try {
-    await axios.post("users/signup");
+    await axios.post("users/logout");
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
+
+export const refresh = createAsyncThunk("refresh", async (_, thunkApi) => {
+  const savedToken = thunkApi.getState().auth.token;
+  if (!savedToken) {
+    return thunkApi.rejectWithValue("Token doesn`t exist!");
+  }
+  setAuthHeader(savedToken);
+  try {
+    const { data } = await axios.get("users/current");
+    return data;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
   }

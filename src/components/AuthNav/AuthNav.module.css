@@ -1,0 +1,13 @@
+.leftLinks {
+  display: flex;
+  gap: 20px;
+}
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.activeLink {
+  color: green;
+}

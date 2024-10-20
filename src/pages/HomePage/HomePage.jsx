@@ -1,7 +1,8 @@
+import s from "./HomePage.module.css";
 const HomePage = () => {
   return (
     <div>
-      <h2>Home Page</h2>
+      <h2 className={s.header}>Home Page</h2>
     </div>
   );
 };

@@ -1,18 +1,9 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f5f5f5;
+.msgDiv {
+  font-weight: bold;
 }
-
-.leftLinks {
-  display: flex;
-  gap: 20px;
-}
-
 .rightLinks {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -25,6 +16,7 @@
 .activeLink {
   color: green;
 }
+
 .btn {
   margin-top: 10px;
   padding: 8px 16px;
