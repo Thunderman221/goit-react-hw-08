@@ -10,6 +10,7 @@ import {
   selectContactsError,
 } from "../../redux/contacts/slice";
 import Loader from "../../components/Loader/Loader";
+import s from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const contacts = useSelector(selectFilteredContacts);
@@ -30,7 +31,7 @@ const ContactsPage = () => {
   }
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />

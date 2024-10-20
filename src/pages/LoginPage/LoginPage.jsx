@@ -1,11 +1,14 @@
 import { Formik, Form, Field } from "formik";
 import s from "./LoginPage.module.css";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/auth/operations";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { Navigate } from "react-router-dom";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const initialValues = {
     email: "",
     password: "",
@@ -22,6 +25,9 @@ const LoginPage = () => {
     password: Yup.string().required("Password is required"),
   });
 
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
   return (
     <div>
       <div className={s.wrapper}>
