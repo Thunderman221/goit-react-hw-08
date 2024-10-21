@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter, selectFilters } from "../../redux/filters/slice";
+import { changeFilter } from "../../redux/filters/slice";
+import { selectNameFilter } from "../../redux/filters/selectors";
 import { Formik, Field, Form } from "formik";
 import s from "./SearchBox.module.css";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
-  const filters = useSelector(selectFilters);
+  const filters = useSelector(selectNameFilter);
 
   const handleInputChange = (e, setFieldValue) => {
     const value = e.target.value;

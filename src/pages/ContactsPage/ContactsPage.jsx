@@ -6,16 +6,16 @@ import SearchBox from "../../components/SearchBox/SearchBox";
 import { fetchContacts } from "../../redux/contacts/operations";
 import {
   selectFilteredContacts,
-  selectContactsLoading,
-  selectContactsError,
-} from "../../redux/contacts/slice";
+  selectLoading,
+  selectError,
+} from "../../redux/contacts/selectors";
 import Loader from "../../components/Loader/Loader";
 import s from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const contacts = useSelector(selectFilteredContacts);
-  const loading = useSelector(selectContactsLoading);
-  const error = useSelector(selectContactsError);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {

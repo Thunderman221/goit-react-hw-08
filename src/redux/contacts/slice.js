@@ -47,18 +47,4 @@ const contactsSlice = createSlice({
   },
 });
 
-export const selectContacts = (state) => state.contacts.items;
-
-export const selectFilteredContacts = (state) => {
-  const contacts = state.contacts?.items || [];
-  const nameFilter = state.filters?.name || "";
-  return contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(nameFilter.toLowerCase())
-  );
-};
-
-export const selectContactsLoading = (state) => state.contacts.loading;
-
-export const selectContactsError = (state) => state.contacts.error;
-
 export const ContactsReducer = contactsSlice.reducer;

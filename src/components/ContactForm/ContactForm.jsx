@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/contacts/operations"; // Обратите внимание на правильный путь к операции
-import { selectContacts } from "../../redux/contacts/slice"; // Проверьте правильный путь к селектору
+import { addContact } from "../../redux/contacts/operations";
+import { selectContacts } from "../../redux/contacts/selectors";
 import { nanoid } from "nanoid";
 import { Formik, Form, Field } from "formik";
 import s from "./ContactForm.module.css";
